@@ -15,6 +15,14 @@ db.post.aggregate(
       localField:'writerId',
       foreignField:'_id',
       as:'writer'}
+   });  
+
+db.post.aggregate(
+   {$lookup:
+      {from:'user',
+      localField:'writerId',
+      foreignField:'_id',
+      as:'writer'}
    },
    {
       $unwind:'$writer'
