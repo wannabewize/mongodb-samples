@@ -1,5 +1,7 @@
 // GeoJSON http://geojson.org/geojson-spec.html
 // Geo Index : https://docs.mongodb.com/manual/core/geospatial-indexes/
+// GeoNear https://docs.mongodb.com/manual/reference/operator/aggregation/geoNear/
+
 use samples;
 
 db.cafes.insert({name:'아리스타', loc : {
