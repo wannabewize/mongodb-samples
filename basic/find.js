@@ -37,11 +37,19 @@ db.movies.find(
    ]})
 
 
+// 도큐먼트 개수 구하기
+db.movies.count()
+db.movies.count({director:"J. J. Abrams"})
+
+// 프로젝션 : 특정 필드만 보기
+db.movies.find({},{_id:0, year:0, director:0})
+
 // 소팅
 db.movies.find().sort({year:-1})
 db.movies.find().sort({year:-1, title:1})
 db.movies.find().sort({_id:-1})
 
-// 도큐먼트 개수 구하기
-db.movies.count()
-db.movies.count({director:"J. J. Abrams"})
+// limit, skip
+db.movies.find().sort({year:-1}).limit(3)
+db.movies.find().sort({year:-1}).skip(3)
+db.movies.find().sort({year:-1}).limit(3).skip(3)
