@@ -21,8 +21,6 @@ db.groups.aggregate([{$lookup:{
 
 
 
-use idols
-
 db.groups.insertMany([
    {name:"소녀시대", agency:"SM", member: 9},
    {name:"동방신기", agency:"SM", member: 2},
@@ -62,7 +60,7 @@ db.members.insertMany([
 
 db.groups.aggregate(
    {$lookup:{
-      from:'team',
+      from:'members',
       localField : 'name',
       foreignField : 'member_name',
       as : 'members'
